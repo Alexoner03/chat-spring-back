@@ -11,7 +11,7 @@ import java.util.Random;
 @Controller
 public class WsController {
 
-    private String[] colores = {"red","green","purple","orange","brown"};
+    private final String[] colores = {"red","green","purple","orange","brown"};
 
     @MessageMapping("/message")
     @SendTo("/chat/message")
