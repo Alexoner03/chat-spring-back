@@ -11,14 +11,14 @@ import java.util.Random;
 @Controller
 public class WsController {
 
-    private final String[] colores = {"red","green","purple","orange","brown"};
+    private final String[] colors = {"red","green","purple","orange","brown"};
 
     @MessageMapping("/message")
     @SendTo("/chat/message")
     public Message sendMessage(Message message){
         message.setDate(new Date().getTime());
         if(message.getType().equals("NEW_USER")){
-            message.setColor(colores[new Random().nextInt(colores.length)]);
+            message.setColor(colors[new Random().nextInt(colors.length)]);
             message.setText(" - Nuevo usuario Conectado");
         }
         return message;
